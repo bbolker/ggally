@@ -209,7 +209,8 @@ make_ggmatrix_plot_obj <- function(fn, mapping = ggplot2::aes(), dataPos = 1, gg
   nonCallVals <- which(lapply(mapping, mode) == "call")
   if (length(nonCallVals) > 0) {
     nonCallNames <- names(mapping)[nonCallVals]
-    stop(
+
+    if (FALSE) stop(
       paste(
         "variables: ",
         paste(shQuote(nonCallNames, type = "cmd"), sep = ", "),

@@ -237,8 +237,8 @@ ggally_cor <- function(
 
   # mapping$x <- mapping$y <- NULL
 
-  xCol <- deparse(mapping$x)
-  yCol <- deparse(mapping$y)
+  xCol <- gsub("^~","",deparse(mapping$x))
+  yCol <- gsub("^~","",deparse(mapping$y))
 
   if (is_date(data[[xCol]]) || is_date(data[[yCol]])) {
 
